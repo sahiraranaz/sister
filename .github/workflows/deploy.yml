@@ -28,8 +28,8 @@ jobs:
 
       - name: 'Build and push'
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/hello-react .
-          docker push ${{ secrets.DOCKERHUB_USERNAME}}/hello-react
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/uas .
+          docker push ${{ secrets.DOCKERHUB_USERNAME}}/uas
       - name: 'Write config'
         run: |
           mkdir ~/.oci
