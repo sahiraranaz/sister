@@ -2,8 +2,12 @@
     <div id="label-page"><h3><b>Buku Input</h3></div>
     <div id="content">
     <div id="content" style="padding-left:20px;padding-bottom:20px;">
-	<form action="proses/buku-input-proses.php" method="post">
+	<form action="proses/buku-input-proses.php" method="post" enctype="multipart/form-data">
 	<table id="tabel-input">
+                <tr>
+                    <td class="label-formulir">Foto</td>
+                    <td class="isian-formulir"><input type="file" name="foto" class="isian-formulir isian-formulir-border"></td>
+                </tr>
 		<tr>
 			<td class="label-formulir">ID Buku</td>
 			<td class="isian-formulir"><input type="text" name="id_buku" class="isian-formulir isian-formulir-border"></td>
