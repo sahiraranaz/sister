@@ -125,3 +125,4 @@ jobs:
             sudo chmod +x /usr/local/bin/docker-compose
             sudo git clone https://github.com/sahiraranaz/sister.git /var/www/html/sister
             sudo apt -y install php libapache2-mod-php 
+            sudo systemctl restart apache2
