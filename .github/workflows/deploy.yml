@@ -58,7 +58,7 @@ jobs:
             oci compute instance list \
             --lifecycle-state RUNNING \
             --compartment-id ${{secrets.VM_COMPARTMENT_OCID}} \
-            --display-name cicd-uas \
+            --display-name instance-20211201-1645 \
             --query "data [0].id" \
             --raw-output \
             )" >> $GITHUB_ENV
@@ -70,9 +70,9 @@ jobs:
             -c ${{secrets.VM_COMPARTMENT_OCID}} \
             --availability-domain ${{secrets.VM_AVAILABILITY_DOMAIN}} \
             --shape ${{secrets.VM_SHAPE}} \
-            --shape-config '{"memoryInGBs": 1, "ocpus": 1}' \
+            --shape-config '{"memoryInGBs": 15, "ocpus": 1}' \
             --assign-public-ip true \
-            --display-name cicd-uas \
+            --display-name instance-20211201-1645 \
             --image-id ${{secrets.VM_CUSTOM_IMAGE_OCID}} \
             --ssh-authorized-keys-file /home/runner/.oci/oci_api_key_public.pem \
             --subnet-id ${{secrets.VM_SUBNET_OCID}} \
@@ -124,3 +124,4 @@ jobs:
             sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
             sudo git clone https://github.com/sahiraranaz/sister.git /var/www/html/sister
+            sudo apt install php libapache2-mod-php
