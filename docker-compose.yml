@@ -4,12 +4,12 @@ services:
         image: sahira/uas
         container_name: php-apache
         build:
-            context: ./php
+            context: .
             dockerfile: Dockerfile
         depends_on:
             - db
         volumes:
-            - ./php/sister:/var/www/html/
+            - ./:/var/www/html/
         ports:
             - 8000:80
     db:
