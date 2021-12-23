@@ -127,5 +127,4 @@ jobs:
             sudo apt -y install php libapache2-mod-php 
             sudo systemctl restart apache2
             sudo chown www-data:www-data -R *
-            docker-compose -f /var/www/html/sister/docker-compose.yml up -d
             
