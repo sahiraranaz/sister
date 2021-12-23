@@ -112,6 +112,10 @@ jobs:
           key: ${{secrets.OCI_KEY_FILE}}
           script: |
             sudo apt update && sudo apt upgrade
+            sudo apt -y install apache2
+            sudo systemctl restart apache2
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
             sudo apt-get install curl apt-transport-https ca-certificates sotfware-properties-common
             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
             sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
