@@ -4,4 +4,4 @@ RUN apt-get update && apt-get upgrade -y
 
 WORKDIR /var/www/html
 
-COPY . /var/www/html/
+COPY . /var/www/html/sister/
